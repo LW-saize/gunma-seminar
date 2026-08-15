@@ -30,11 +30,13 @@ function render() {
 
   titles.forEach(t => {
     const color = GENRE_COLORS[t.genre] || "#999";
+    const icon = GENRE_ICONS[t.genre] || "🎮";
     const card = document.createElement("a");
     card.className = "card";
     card.href = `detail.html?id=${encodeURIComponent(t.id)}`;
     card.innerHTML = `
       <div class="card-thumb" style="background:${color}">
+        <span class="thumb-icon">${icon}</span>
         ${isNew(t.releaseDate) ? '<span class="badge-new">NEW</span>' : ""}
       </div>
       <div class="card-body">

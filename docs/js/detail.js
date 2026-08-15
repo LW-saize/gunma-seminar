@@ -15,9 +15,10 @@ if (!title) {
   container.innerHTML = `<p>タイトルが見つかりませんでした。<a href="index.html">一覧に戻る</a></p>`;
 } else {
   const color = GENRE_COLORS[title.genre] || "#999";
+  const icon = GENRE_ICONS[title.genre] || "🎮";
   container.innerHTML = `
     <a class="back-link" href="index.html">← 一覧に戻る</a>
-    <div class="detail-thumb" style="background:${color}"></div>
+    <div class="detail-thumb" style="background:${color}"><span class="thumb-icon">${icon}</span></div>
     <span class="genre-tag" style="background:${color}">${title.genre}</span>
     <h1>${title.name}</h1>
     <p class="release-date">配信日: ${formatDate(title.releaseDate)}</p>
