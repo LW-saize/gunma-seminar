@@ -1,0 +1,281 @@
+:root {
+  --main-color: #2D6CDF;
+  --accent-color: #FF8A3D;
+  --bg-color: #F7F8FA;
+  --text-color: #2A2A2A;
+  --card-bg: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.site-header {
+  background: var(--main-color);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.site-header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 16px;
+  font-weight: bold;
+  opacity: 0.85;
+}
+
+.site-header nav a.active,
+.site-header nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  border: 1px solid var(--main-color);
+  background: #fff;
+  color: var(--main-color);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn.active {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: block;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: transform 0.1s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-thumb {
+  height: 120px;
+  position: relative;
+}
+
+.badge-new {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.card-body {
+  padding: 12px;
+}
+
+.card-body h3 {
+  font-size: 16px;
+  margin: 8px 0 4px;
+}
+
+.genre-tag {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.release-date {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+}
+
+.empty {
+  color: #777;
+}
+
+/* 詳細ページ */
+.detail-page {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.detail-thumb {
+  height: 180px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.detail-page h1 {
+  margin: 8px 0;
+}
+
+.description {
+  line-height: 1.7;
+}
+
+.store-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.store-btn {
+  background: var(--main-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* 管理画面 */
+.admin-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .admin-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-form, .admin-list {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.primary-btn {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ghost-btn, #cancel-edit {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  background: none;
+  color: var(--main-color);
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.delete-btn {
+  color: #d33;
+}
+
+.mvp-note {
+  max-width: 960px;
+  margin: 0 auto 24px;
+  padding: 0 24px;
+  font-size: 13px;
+  color: #777;
+}
